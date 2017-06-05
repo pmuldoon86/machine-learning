@@ -48,3 +48,14 @@ Then start the server at localhost:3000
 ## Images
 
 ## User Stories
+As a robot
+So that I can develop social skills
+I would like to play Connect 4
+
+As a robot
+So that I can get better at Connect 4
+I would like to learn from my mistakes
+
+As a robot
+So the game can be fair
+I would like to be able to alternate who starts first
