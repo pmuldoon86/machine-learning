@@ -1,5 +1,7 @@
 # Machine Learning - Connect 4
 by MA Remote April 2017 cohort of 5
+Sandy Cochrane, Cristina Iannone, Sophie Mann, Paula Muldoon, Simon Tanner
+
 
 
 ### About
@@ -8,7 +10,6 @@ by MA Remote April 2017 cohort of 5
 
 ## Run locally
 View the repository [here](https://github.com/pmuldoon86/machine-learning) on GitHub
-Sandy Cochrane, Cristina Iannone, Sophie Mann, Paula Muldoon, Simon Tanner
 
 Clone the repo. Then:
 
