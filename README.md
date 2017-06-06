@@ -39,11 +39,9 @@ Then start the server at localhost:3000
 ---
 ## Technologies used
 
-* [Ruby 2.4.0](https://www.ruby-lang.org/en/) as the main back-end language
-* [Rails 5.1.1](http://rubyonrails.org/) for the framework
-* [PostgreSQL](https://www.postgresql.org/) for handling databases
-* Javascript for the front-end
-* Vanilla CSS and Chrome DevTools to inspect the real Instagram's styling
+* [Python 3.6.1](https://www.python.org/) as the main back-end language
+* [Django](https://www.djangoproject.com/) for the framework
+* [Githup](https://github.com/pmuldoon86/machine-learning/) for branches/teamwork
 * Git for version managing
 
 ## Images
@@ -51,12 +49,4 @@ Then start the server at localhost:3000
 ## User Stories
 As a robot
 So that I can develop social skills
-I would like to play Connect 4
-
-As a robot
-So that I can get better at Connect 4
-I would like to learn from my mistakes
-
-As a robot
-So the game can be fair
-I would like to be able to alternate who starts first
+I would like to play tic-tac-toe
