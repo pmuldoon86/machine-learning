@@ -14,20 +14,17 @@ View the repository [here](https://github.com/pmuldoon86/machine-learning) on Gi
 Clone the repo. Then:
 
 ```bash
-bundle install
-bin/rails db:create
-bin/rails db:migrate
+
 ```
 #### To run the tests
 ```bash
-bundle exec rspec
 ```
 
 ### To view in browser
 ```bash
-bin/rails server
+python manage.py runserver
 ```
-Then start the server at localhost:3000
+Then start the server at localhost:8000
 
 ---
 ## Processes
