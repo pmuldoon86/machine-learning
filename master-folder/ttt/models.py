@@ -29,14 +29,14 @@ def check_for_win():
     else:
       print('no win')
 
-def iterate_win_check_row():
+def win_check_row():
     for r in board:
       if r[0] == r[1] == r[2] == "X":
         print('win')
       else:
         print('no win')
 
-def iterate_win_check_column():
+def win_check_column():
     for c in range(0, len(board[0])):
       if board[0][c] == board[1][c] == board[2][c] == "X":
         print('win')
@@ -51,5 +51,25 @@ def win_check_diag():
     else:
         print("no win")
 
+def win_check():
+    win_check_row()
+    win_check_column()
+    win_check_diag()
 
-print_board(board)
+def receive_input(position):
+    r, c = position
+    board[r][c] = "X"
+
+
+def main():
+    while True:
+        print_board(board)
+        position = raw_input("Enter a position: ").split(" ")
+        position = map(lambda a: int(a), position)
+        receive_input(position)
+        win_check()
+        if raw_input("continue? y for yes") != "y":
+            break
+
+
+main()
