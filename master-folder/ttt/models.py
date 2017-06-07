@@ -15,3 +15,9 @@ def print_board(board):
         print(" ".join(row))
 
 print_board(board)
+
+o = "o"
+board[0][0] = o
+
+print_board(board)
+
