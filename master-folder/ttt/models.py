@@ -1,0 +1,17 @@
+from django.db import models
+
+# Create your models here.
+
+board = []
+
+for row in range(3):
+    board.append([])
+    for column in range(3):
+        board[row].append('x')
+
+
+def print_board(board):
+    for row in board:
+        print(" ".join(row))
+
+print_board(board)
