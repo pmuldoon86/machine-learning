@@ -16,7 +16,9 @@ class NewGametest(unittest.TestCase):
 
     def test_links(self):
         self.browser.get('http://localhost:8000')
-        self.browser.find_element_by_xpath("//img[@title='logo']")
+        self.browser.find_element_by_xpath("//img[@title='logo']").click()
+        self.assertIn('Github', self.browser.title)
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
