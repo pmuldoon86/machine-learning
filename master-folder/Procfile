@@ -1,1 +1,1 @@
-web: gunicorn bootcamp.wsgi --log-file -
+web: gunicorn tictactoe.wsgi --log-file -
