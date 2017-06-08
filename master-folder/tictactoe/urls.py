@@ -19,6 +19,6 @@ from ttt import views
 
 
 urlpatterns = [
-    url(r'^$', views.home_page, name = 'home'),
+    url(r'^$', views.index, name = 'index'),
     url(r'^admin/', admin.site.urls),
 ]
