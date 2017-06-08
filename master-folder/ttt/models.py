@@ -4,10 +4,13 @@ from django.db import models
 
 board = []
 
-for row in range(3):
-    board.append([])
-    for column in range(3):
-        board[row].append('.')
+def create_board():
+    global board
+    board = []
+    for row in range(3):
+        board.append([])
+        for column in range(3):
+            board[row].append('.')
 
 def print_board(board):
     for row in board:
@@ -17,59 +20,50 @@ def input_marker(row, column, input_type):
     board[row][column] = input_type
     print_board(board)
 
-def check_for_win():
-# check for rows are the same
-
-    if board[0][0] == board[0][1] and board[0][0] == board[0][2]:
-      print('win')
-    elif board[1][0] == board[1][1] and board[1][0] == board[1][2]:
-      print('win')
-    elif board[2][0] == board[2][1] and board[2][0] == board[2][2]:
-      print('win')
-    else:
-      print('no win')
-
-def win_check_row():
+def win_check_row(letter):
     for r in board:
-      if r[0] == r[1] == r[2] == "X":
-        print('win')
-      else:
-        print('no win')
+      if r[0] == r[1] == r[2] == letter:
+        return('win')
 
-def win_check_column():
+
+def win_check_column(letter):
     for c in range(0, len(board[0])):
-      if board[0][c] == board[1][c] == board[2][c] == "X":
-        print('win')
-      else:
-        print('no win')
+      if board[0][c] == board[1][c] == board[2][c] == letter:
+        return('win')
 
-def win_check_diag():
-    if board[0][0] == board[1][1] == board[2][2] == "X":
-        print("win")
-    elif board[0][2] == board[1][1] == board[2][0] == "X":
-        print("win")
+
+def win_check_diag(letter):
+    if board[0][0] == board[1][1] == board[2][2] == letter:
+        return("win")
+    elif board[0][2] == board[1][1] == board[2][0] == letter:
+        return("win")
     else:
-        print("no win")
+        return False
 
-def win_check():
-    win_check_row()
-    win_check_column()
-    win_check_diag()
+def win_check(letter):
+    if win_check_row(letter) == "win" or win_check_column(letter) == "win" or win_check_diag(letter) =="win":
+        return "win"
 
-def receive_input(position):
+def receive_input(position, letter):
     r, c = position
-    board[r][c] = "X"
+    board[r][c] = letter
 
 
 def main():
+    create_board()
+    print_board(board)
     while True:
-        print_board(board)
+
         position = raw_input("Enter a position: ").split(" ")
         position = map(lambda a: int(a), position)
-        receive_input(position)
-        win_check()
-        if raw_input("continue? y for yes") != "y":
-            break
+        receive_input(position, "X")
+        print_board(board)
+        if win_check("X") == "win":
+            print "You've won!!!"
+            if raw_input("Play again? Enter y for yes: ") == "y":
+                main()
+            else:
+                break
 
 
 main()
