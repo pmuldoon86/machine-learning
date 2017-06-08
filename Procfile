@@ -1,1 +1,1 @@
-web: gunicorn master-folder/tictactoe.wsgi --log-file -
+web: gunicorn master-folder.tictactoe.wsgi --log-file -
