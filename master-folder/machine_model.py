@@ -16,17 +16,18 @@ def append_states_to_mem(memory2, states2):
 def loop_states(memory1, states1):
     for i in range(0, len(states1)):
         s2 = []
-        if i == 0:
-            memory1[i].append(states1[i + 1: len(states1)])
-        elif i == len(states1) - 1:
-            memory1[i].append(states1[0:len(states1)-1])
-        else:
-            for n in range(0, len(states1)):
-                if i != n:
-                    s2.append(states1[n])
-            memory1[i].append(s2)
+        if states1 > 0:
+            if i == 0:
+                memory1[i].append(states1[i + 1: len(states1)])
+            elif i == len(states1) - 1:
+                memory1[i].append(states1[0:len(states1)-1])
+            else:
+                for n in range(0, len(states1)):
+                    if i != n:
+                        s2.append(states1[n])
+                memory1[i].append(s2)
 
-        loop_states(memory1[i][1], memory1[i][1])
+            loop_states(memory1[i][1], memory1[i][1])
 
 memory = append_states_to_mem(memory, simple_states)
 
