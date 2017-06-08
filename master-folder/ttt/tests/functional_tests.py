@@ -16,4 +16,5 @@ class NewGametest(unittest.TestCase):
         self.assertIn('TTT', self.browser.title)
         self.fail('Finish the test!')
 
-browser.quit()
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
