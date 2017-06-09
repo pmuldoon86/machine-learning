@@ -56,17 +56,33 @@ class TicTacToe():
         self.board[r][c] = letter
 
 
+def whose_go(num, player_1, player_2):
+    if num % 2 != 0:
+        player = player_1
+        symbol = "X"
+    else:
+        player = player_2
+        symbol = "0"
+
+    num += 1
+
+    return(num, player, symbol)
+
 def main():
     new_board = TicTacToe()
     new_board.print_board()
-    while True:
+    player_1 = input("Player 1 please enter your name: ")
+    player_2 = input("Player 2 please enter your name: ")
+    num = 1
 
-        position = input("Enter a position: ").split(" ")
+    while True:
+        num, player, symbol = whose_go(num, player_1, player_2)
+        position = input(str(player) + " enter a position: ").split(" ")
         position = list(map(lambda a: int(a), position))
-        new_board.receive_input(position, "X")
+        new_board.receive_input(position, symbol)
         new_board.print_board()
-        if new_board.win_check("X") == "win":
-            print("You've won!!!")
+        if new_board.win_check(symbol) == "win":
+            print(str(player) + " you've won!!!")
             if input("Play again? Enter y for yes: ") == "y":
                 main()
             else:
