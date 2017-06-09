@@ -17,9 +17,7 @@ class NewGametest(unittest.TestCase):
     def test_links(self):
         self.browser.get('http://localhost:8000')
         image = self.browser.find_element_by_xpath("//img[@title='logo']")
-        print("1")
         image.click()
-        print("2")
         self.assertIn('pmuldoon86/machine-learning: Makers Week 9', self.browser.title)
 
 
