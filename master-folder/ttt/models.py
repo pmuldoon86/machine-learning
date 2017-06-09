@@ -4,10 +4,11 @@ from django.db import models
 
 
 class TicTacToe():
-    board = []
 
     def __init__(self):
-        board = self.create_board()
+
+        self.board = []
+        self.create_board()
 
     def create_board(self):
         board = self.board
@@ -61,9 +62,7 @@ def main():
     while True:
 
         position = input("Enter a position: ").split(" ")
-        print(position)
         position = list(map(lambda a: int(a), position))
-        print(position)
         new_board.receive_input(position, "X")
         new_board.print_board()
         if new_board.win_check("X") == "win":
@@ -72,6 +71,8 @@ def main():
                 main()
             else:
                 break
+
+    quit()
 
 
 main()
