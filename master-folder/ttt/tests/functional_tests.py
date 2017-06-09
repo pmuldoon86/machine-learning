@@ -1,6 +1,6 @@
 from selenium import webdriver
 import unittest
-import djclick as click
+from splinter import browser
 
 
 class NewGametest(unittest.TestCase):
@@ -19,7 +19,7 @@ class NewGametest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
         image = self.browser.find_element_by_xpath("//img[@title='logo']")
         image.click()
-        self.assertIn('pmuldoon86/machine-learning: Makers Week 9', self.browser.title)
+        self.assertEqual(self.browser.url, 'https://github.com/pmuldoon86/machine-learning')
 
 
 if __name__ == '__main__':
