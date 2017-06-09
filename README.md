@@ -42,7 +42,7 @@ Then start the server at localhost:8000
 
 * [Python 3.6.1](https://www.python.org/) as the main back-end language
 * [Django](https://www.djangoproject.com/) for the framework
-* [Githup](https://github.com/pmuldoon86/machine-learning/) for branches/teamwork
+* [Github](https://github.com/pmuldoon86/machine-learning/) for branches/teamwork
 * Git for version managing
 
 ## Images
