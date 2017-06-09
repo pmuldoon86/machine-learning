@@ -1,6 +1,8 @@
-# Machine Learning - Connect 4
+# Tictactoe in Python
 by MA Remote April 2017 cohort of 5
 Sandy Cochrane, Cristina Iannone, Sophie Mann, Paula Muldoon, Simon Tanner
+
+We set ourselves the challenge of learning Python/Django in 4 days and creating a Tictactoe game from scratch!
 
 ---
 
@@ -46,6 +48,7 @@ Then start the server at localhost:8000
 * Git for version managing
 
 ## Images
+Hosted on Imgur
 
 ## User Stories
 As a robot
