@@ -68,6 +68,18 @@ def whose_go(num, player_1, player_2):
 
     return(num, player, symbol)
 
+def check_board(position, game, player):
+    while True:
+        position = list(map(lambda a: int(a), position))
+
+        if game.board[position[0]][position[1]] == ".":
+            break
+        else:
+            position = input(str(player) + " enter another position: ").split(" ")
+            position = list(map(lambda a: int(a), position))
+    return(position)
+
+
 def main():
     new_board = TicTacToe()
     new_board.print_board()
@@ -78,7 +90,7 @@ def main():
     while True:
         num, player, symbol = whose_go(num, player_1, player_2)
         position = input(str(player) + " enter a position: ").split(" ")
-        position = list(map(lambda a: int(a), position))
+        position = check_board(position, new_board, player)
         new_board.receive_input(position, symbol)
         new_board.print_board()
         if new_board.win_check(symbol) == "win":
