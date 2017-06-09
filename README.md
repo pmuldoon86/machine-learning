@@ -2,9 +2,6 @@
 by MA Remote April 2017 cohort of 5
 Sandy Cochrane, Cristina Iannone, Sophie Mann, Paula Muldoon, Simon Tanner
 
-## Dependencies
-[Django click](https://pypi.python.org/pypi/django-click)
-
 ---
 
 ## Run locally
