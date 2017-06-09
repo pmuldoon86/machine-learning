@@ -2,10 +2,6 @@
 by MA Remote April 2017 cohort of 5
 Sandy Cochrane, Cristina Iannone, Sophie Mann, Paula Muldoon, Simon Tanner
 
-
-
-### About
-
 ---
 
 ## Run locally
@@ -14,10 +10,18 @@ View the repository [here](https://github.com/pmuldoon86/machine-learning) on Gi
 Clone the repo. Then:
 
 ```bash
+python manage.py runserver
 
 ```
-#### To run the tests
+## To run the tests
 ```bash
+Feature tests:
+(from machine-learning folder):
+python master-folder/ttt/tests/functional_tests.py
+
+Unit tests:
+(from master-folder):
+`python manage.py test`
 ```
 
 ### To view in browser
