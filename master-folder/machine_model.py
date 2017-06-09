@@ -37,12 +37,12 @@ def loop_states(memory1, memory2):
 
         #print(memory1[i])
         print(i)
-        print("v = " + str(v))
-        v +=1
+    print("v = " + str(v))
+    v +=1
     memory2.append(s1)
     print(memory2)
     # for l in range(0, len(memory[-1])):
-    #     loop_states(memory1[-1][l], memory2)
+    #     loop_states(memory1[l], memory2)
     # try:
     #     loop_states(memory1[-1])
     # except IndexError:
