@@ -1,8 +1,13 @@
 from selenium import webdriver
 import unittest
+import djclick as click
 
 
 class NewGametest(unittest.TestCase):
+
+    @click.command()
+    def command():
+        click.secho(image)
 
     def setUp(self):
         self.browser = webdriver.Firefox()
