@@ -1,47 +1,78 @@
-# from django.db import models
-#
-# # Create your models here.
-#
-# board = []
-#
-# for row in range(3):
-#     board.append([])
-#     for column in range(3):
-#         board[row].append('.')
-#
-# def print_board(board):
-#     for row in board:
-#         print(" ".join(row))
-#
-# def input_marker(row, column, input_type):
-#     board[row][column] = input_type
-#     print_board(board)
-#
-# def check_for_win():
-# # check for rows are the same
-#
-#     if board[0][0] == board[0][1] and board[0][0] == board[0][2]:
-#       print('win')
-#     elif board[1][0] == board[1][1] and board[1][0] == board[1][2]:
-#       print('win')
-#     elif board[2][0] == board[2][1] and board[2][0] == board[2][2]:
-#       print('win')
-#     else:
-#       print('no win')
-#
-# def iterate_win_check_row():
-#     for r in board:
-#       if r[0] == r[1] == r[2]:
-#         print('win')
-#       else:
-#         print('no win')
-#
-# def iterate_win_check_column():
-#     for c in board:
-#       if [0]c == [1]c == [2]c:
-#         print('win')
-#       else:
-#         print('no win')
-#
-#
-# print_board(board)
+from django.db import models
+
+# Create your models here.
+
+
+class TicTacToe():
+
+    def __init__(self):
+
+        self.board = []
+        self.create_board()
+
+    def create_board(self):
+        board = self.board
+        for row in range(3):
+            board.append([])
+            for column in range(3):
+                board[row].append('.')
+
+    def print_board(self):
+        for row in self.board:
+            print(" ".join(row))
+
+    def input_marker(row, column, input_type):
+        self.board[row][column] = input_type
+        self.print_board(board)
+
+    def win_check_row(self, letter):
+        for r in self.board:
+          if r[0] == r[1] == r[2] == letter:
+            return('win')
+
+
+    def win_check_column(self, letter):
+        board = self.board
+        for c in range(0, len(board[0])):
+          if board[0][c] == board[1][c] == board[2][c] == letter:
+            return('win')
+
+
+    def win_check_diag(self, letter):
+        board = self.board
+        if board[0][0] == board[1][1] == board[2][2] == letter:
+            return("win")
+        elif board[0][2] == board[1][1] == board[2][0] == letter:
+            return("win")
+        else:
+            return False
+
+    def win_check(self, letter):
+        if self.win_check_row(letter) == "win" or self.win_check_column(letter) == "win" or self.win_check_diag(letter) =="win":
+            return "win"
+
+    def receive_input(self, position, letter):
+        r, c = position
+        self.board[r][c] = letter
+
+
+def main():
+    new_board = TicTacToe()
+    new_board.print_board()
+    while True:
+
+        position = input("Enter a position: ").split(" ")
+        position = list(map(lambda a: int(a), position))
+        new_board.receive_input(position, "X")
+        new_board.print_board()
+        if new_board.win_check("X") == "win":
+            print("You've won!!!")
+            if input("Play again? Enter y for yes: ") == "y":
+                main()
+            else:
+                break
+
+    quit()
+
+
+main()
