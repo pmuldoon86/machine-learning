@@ -1,9 +1,11 @@
 from selenium import webdriver
 import unittest
-from splinter import browser
+from splinter import Browser
 
 
 class NewGametest(unittest.TestCase):
+
+    browser = Browser()
 
     def setUp(self):
         self.browser = webdriver.Firefox()
