@@ -5,8 +5,6 @@ from splinter import Browser
 
 class NewGametest(unittest.TestCase):
 
-    browser = Browser()
-
     def setUp(self):
         self.browser = webdriver.Firefox()
 
@@ -19,9 +17,9 @@ class NewGametest(unittest.TestCase):
 
     def test_links(self):
         self.browser.get('http://localhost:8000')
-        image = self.browser.find_element_by_xpath("//img[@title='logo']")
-        image.click()
-        self.assertEqual(self.browser.url, 'https://github.com/pmuldoon86/machine-learning')
+        self.browser.find_element_by_xpath("//img[@title='logo']").click()
+        self.browser.get('https://github.com/pmuldoon86/machine-learning')
+        self.assertEqual(self.browser.title, 'GitHub - pmuldoon86/machine-learning: Makers Week 9')
 
 
 if __name__ == '__main__':
