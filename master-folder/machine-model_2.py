@@ -11,15 +11,19 @@ simple_states = [[1, 1], [2,1], [3, 1]]
 tree = {}
 
 def create_tree(states):
-    tree['0'] = states
-    for i in range(0, len(states)):
-        key = str(i + 1)
-        new_states = states[:]
-        new_states.pop(i)
-        print(new_states)
-        tree[key] = new_states
+    tree['0'] = states[:]
+
 
 def grow_tree(tree):
     for k, v in sorted(tree.items()):
         indeces = int(k) + 1
         print(k + str(v))
+
+def grow(tree, start, states):
+    for i in range(0, len(states)):
+        new_states = states[:]
+        key = start + str(new_states.pop(i)[0])
+        print(new_states)
+        if len(new_states) > 0:
+            tree[key] = new_states
+        grow(tree, key, new_states)
